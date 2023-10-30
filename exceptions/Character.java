@@ -40,14 +40,6 @@ public abstract class Character implements Movable {
         return RPGClass;
     }
 
-    public void tryToAttack(String weapon) throws WeaponException {
-        try {
-            attack(weapon);
-        } catch (WeaponException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public void attack(String weapon) {
         System.out.println(this.name + ": Rrrrrrrrr....");
     }
