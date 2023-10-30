@@ -10,10 +10,15 @@ public class Warrior extends Character {
     }
 
     @Override
-    public void attack(String weapon) {
+    public void attack(String weapon) throws WeaponException {
+        if (weapon == null || weapon.isEmpty()) {
+            throw new WeaponException(this.name + ": I refuse to fight with my bare hands.");
+        }
         if (weapon.equals("hammer") || weapon.equals("sword")) {
             super.attack(weapon);
             System.out.println(this.name + ": I'll crush you with my " + weapon + "!");
+        } else {
+            throw new WeaponException(this.name + ": A " + weapon + "?? What should I do with this?!");
         }
     }
 

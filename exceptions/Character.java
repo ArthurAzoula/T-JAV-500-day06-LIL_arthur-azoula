@@ -49,18 +49,8 @@ public abstract class Character implements Movable {
     }
 
     public void attack(String weapon) throws WeaponException {
-        if (weapon.isEmpty()) {
-            if (RPGClass.equals("Warrior")) {
-                throw new WeaponException("[" + name + "]: I refuse to fight with my bare hands.");
-            } else if (RPGClass.equals("Mage")) {
-                throw new WeaponException("[" + name + "]: I don't need this stupid " + weapon + "! Don't misjudge my powers!");
-            }
-        } else {
-            if (RPGClass.equals("Warrior")) {
-                throw new WeaponException("[" + name + "]: A " + weapon + "?? What should I do with this?!");
-            } else if (RPGClass.equals("Mage")) {
-                throw new WeaponException("[" + name + "]: I don't need this stupid " + weapon + "! Don't misjudge my powers!");
-            }
+        if (weapon == null || weapon.isEmpty()) {
+            throw new WeaponException(this.name + ": I refuse to fight with my bare hands.");
         }
         System.out.println(this.name + ": Rrrrrrrrr....");
     }
