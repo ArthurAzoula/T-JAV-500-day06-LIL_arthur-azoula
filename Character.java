@@ -1,4 +1,4 @@
-public abstract class Character {
+public abstract class Character implements Movable {
 
     protected String name;
     protected int life;
@@ -42,5 +42,25 @@ public abstract class Character {
 
     public void attack(String weapon) {
         System.out.println(this.name + ": Rrrrrrrrr....");
+    }
+
+    @Override
+    public void moveRight() {
+        System.out.println(this.name + ": moves right");
+    }
+
+    @Override
+    public void moveLeft() {
+        System.out.println(this.name + ": moves left");
+    }
+
+    @Override
+    public void moveForward() {
+        System.out.println(this.name + ": moves forward");
+    }
+
+    @Override
+    public void moveBack() {
+        System.out.println(this.name + ": moves back");
     }
 }
